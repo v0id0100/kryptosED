@@ -27,12 +27,18 @@ def decryption(file, key, layoutfilename2, layoutkey, decrypt, button, progressb
         with open(file, 'rb') as fin:
             nonce = fin.read(8)
             cipher = AES.new(readkey, AES.MODE_CTR, nonce=nonce)
-            filesize = os.path.getsize(file) - 16
+            filesize = os.path.getsize(file) - 8
             processed = 0
             chunk_size = 64 * 1024  # 64 KB
 
+            file_path = Path(file)
+            if file_path.suffix == '.enc':
+                output_file = str(file_path.with_suffix(''))
+            else:
+                output_file = str(file) + ".decrypted"
+
             #Decipher per blocks
-            with open(str(file), 'wb') as fout:
+            with open(output_file, 'wb') as fout:
                 while True:
                     chunk = fin.read(chunk_size)
                     if not chunk:

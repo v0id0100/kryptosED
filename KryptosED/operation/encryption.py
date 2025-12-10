@@ -31,10 +31,10 @@ def encryption(file, layoutfilename, encryptbutton, progressbar=None):
         processed = 0
         chunk_size = 64 * 1024  # 64 KB
 
-        #Temp file to cipher it
-        temp_enc_file = str(file) + ".enc_tmp"
+        #Encrypted output file:
+        encrypted_file = str(file) + ".enc"
 
-        with open(str(file), 'rb') as fin, open(temp_enc_file, 'wb') as fout:
+        with open(str(file), 'rb') as fin, open(encrypted_file, 'wb') as fout:
             fout.write(nonce)  # Save the nonce to first KB
             while True:
                 chunk = fin.read(chunk_size)
@@ -51,10 +51,7 @@ def encryption(file, layoutfilename, encryptbutton, progressbar=None):
                     progressbar.master.update_idletasks()
                 else:
                     progressbar.update_idletasks()
-
-        #Write the file
-        os.replace(temp_enc_file, str(file))
-
+                    
         # Save the key
         tkinter.messagebox.showwarning("Info Message", "Please select a folder to save the key.")
         folder = filedialog.askdirectory()
