@@ -1,6 +1,6 @@
 # KryptosED
 
-![Icona de l'Aplicació](utils/images/icon.png)
+![App Icon](KryptosED/utils/images/icon.png)
 
 ## Català
 

@@ -1,6 +1,6 @@
 # KryptosED
 
-![Icono de la App](utils/images/icon.png)
+![App Icon](KryptosED/utils/images/icon.png)
 
 ## Español
 
