@@ -52,7 +52,20 @@
 
 Assegura't de tenir Python 3.7+ instal·lat. Després, instal·la les llibreries requerides:
 
+Debian / Ubuntu:
 ```bash
+sudo apt install python3-tk
+pip install -r requirements.txt
+```
+Fedora:
+```bash
+sudo dnf install python3-tkinter
+pip install -r requirements.txt
+```
+
+Arch Linux
+```bash
+sudo pacman -S tk
 pip install -r requirements.txt
 ```
 
