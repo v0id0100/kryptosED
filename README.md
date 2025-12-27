@@ -52,10 +52,22 @@
 
 Make sure you have Python 3.7+ installed. Then, install the required libraries:
 
+Debian / Ubuntu:
 ```bash
+sudo apt install python3-tk
+pip install -r requirements.txt
+```
+Fedora:
+```bash
+sudo dnf install python3-tkinter
 pip install -r requirements.txt
 ```
 
+Arch Linux
+```bash
+sudo pacman -S tk
+pip install -r requirements.txt
+```
 **Required Libraries:**
 - `PyCryptodome` - For AES-256 encryption implementation
 - `customtkinter` - For modern UI components
